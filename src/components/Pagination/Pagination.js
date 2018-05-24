@@ -1,9 +1,14 @@
 import React from 'react'
 import {ITEMS_PER_PAGE} from 'constants/common'
+import PropTypes from 'prop-types'
+
 
 export default class Pagination extends React.Component {
-  constructor(props) {
-    super(props)
+  static propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    setPage: PropTypes.func.isRequired,
+    hasMore: PropTypes.bool.isRequired,
+    total: PropTypes.number.isRequired
   }
 
   render() {

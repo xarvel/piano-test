@@ -1,7 +1,12 @@
 import React from 'react'
 import './style.pcss'
+import PropTypes from 'prop-types'
 
 export default class SearchInput extends React.Component {
+  static propTypes = {
+    onSearch: PropTypes.func.isRequired
+  }
+
   constructor(props) {
     super(props)
 
