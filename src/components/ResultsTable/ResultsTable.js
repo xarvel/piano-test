@@ -28,7 +28,7 @@ export default class ResultsTable extends React.Component {
             <thead>
             <tr className='results-table__headrow'>
               <th>Author</th>
-              <th>Topic</th>
+              <th>Question</th>
               <th>Answers</th>
               <th>Tags</th>
             </tr>
