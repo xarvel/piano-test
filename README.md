@@ -2,6 +2,7 @@
 
 Run:
 ```
-npm i -g webpack-dev-server
+npm install
+npm install -g webpack-dev-server
 webpack-dev-server
 ```
