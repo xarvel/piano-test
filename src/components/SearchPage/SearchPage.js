@@ -61,12 +61,12 @@ export default class SearchPage extends React.Component {
   render() {
 
     const params = new URLSearchParams(this.props.location.search);
-    const querySring = params.get('q');
+    const querySring = params.get('q') || '';
 
     return (
       <div className='page'>
-        <SearchInput onSearch={this.handleSearch}/>
-        {querySring !== null && <div>
+        <SearchInput onSearch={this.handleSearch} currentQuery={querySring}/>
+        {querySring !== '' && <div>
           <h2>Search by: {querySring}</h2>
 
           <div>

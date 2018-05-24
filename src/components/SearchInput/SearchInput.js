@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 
 export default class SearchInput extends React.Component {
   static propTypes = {
-    onSearch: PropTypes.func.isRequired
+    onSearch: PropTypes.func.isRequired,
+    currentQuery: PropTypes.string.isRequired,
   }
 
   constructor(props) {
@@ -23,7 +24,8 @@ export default class SearchInput extends React.Component {
       }}>
         <input onChange={(event) => this.setState({
           value: event.target.value
-        })} value={this.state.value} type='text' className='search-input__input' placeholder='Search...'/>
+        })} value={this.state.value} type='text' className='search-input__input'
+               placeholder={this.props.currentQuery !== '' ? this.props.currentQuery : 'Search...'}/>
         <button type='submit'
                 className='search-input__button'>Search
         </button>
