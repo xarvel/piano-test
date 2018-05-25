@@ -1,7 +1,5 @@
 import React from 'react'
 import SearchInput from '../SearchInput'
-import ReactDOM from 'react-dom'
-
 import ResultsByQueryString from '../ResultsTable/redux/ResultsByQueryString'
 import ResultsByAuthor from '../ResultsTable/redux/ResultsByAuthor'
 import ResultsByTag from '../ResultsTable/redux/ResultsByTag'
@@ -35,22 +33,14 @@ export default class SearchPage extends React.Component {
       quickViewType: 'author',
       quickViewAuthorID: id,
       quickViewAuthorName: name
-    }, () => {
-      const quickViewAuthor = ReactDOM.findDOMNode(this.refs.quickViewAuthor)
-      window.scrollTo(0, quickViewAuthor.offsetTop)
     })
-
   }
 
   handleLoadByTag(tag) {
-
     this.setState({
       isModalOpened: true,
       quickViewType: 'tag',
       quickViewTag: tag
-    }, () => {
-      const quickViewTag = ReactDOM.findDOMNode(this.refs.quickViewTag)
-      window.scrollTo(0, quickViewTag.offsetTop);
     })
   }
 
@@ -84,12 +74,10 @@ export default class SearchPage extends React.Component {
           })
         }}>
           {this.state.quickViewType === 'author' && <ResultsByAuthor
-            ref='quickViewAuthor'
             authorID={this.state.quickViewAuthorID}
             loadByAuthor={this.handleLoadByAuthor}
             loadByTag={this.handleLoadByTag}/>}
           {this.state.quickViewType === 'tag' && <ResultsByTag
-            ref='quickViewTag'
             tag={this.state.quickViewTag}
             loadByAuthor={this.handleLoadByAuthor}
             loadByTag={this.handleLoadByTag}/>}
