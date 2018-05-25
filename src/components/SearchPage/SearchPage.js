@@ -12,9 +12,6 @@ export default class SearchPage extends React.Component {
     super(props)
 
     this.state = {
-      searchQuery: '',
-      quickViewItems: [],
-      quickViewPage: 1,
       quickViewType: '',
       quickViewAuthorID: '',
       quickViewAuthorName: '',

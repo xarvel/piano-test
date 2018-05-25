@@ -54,7 +54,6 @@ export default function (Component) {
         }
       }
 
-
       return (<Component items={this.props.searchByQuery.items} page={this.props.searchByQuery.page}
                          errorMessage={errorMessage}
                          status={this.props.searchByQuery.status}
